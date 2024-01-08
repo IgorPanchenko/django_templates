@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Marga &mdash; Website Template by Colorlib
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="ftco-blocks-cover-1">
+        <div class="ftco-cover-1" style="background-image: url('{% static '' %}images/hero_1.jpg');">
+            <div class="container">
+              <div class="row align-items-center justify-content-center">
+                <div class="col-lg-12 text-center">
+                   <div class="box-92819">
+                    <h1 class="text-uppercase text-black mb-3">Блог</h1>
+                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus harum, error minima?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+    
+    <div class="site-section">
+      <div class="container">
+        <div class="row  mb-5">
+          <div class="col-md-7">
+            <h2 class="heading-39291">Читайте наш блог и следите за новостями</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto quos veniam magni totam, architecto earum dolor id obcaecati!</p>
+            
+          </div>
+        </div>
+        <div class="row align-items-stretch">
+          {% for post in blog %}
+          <div class="col-lg-3 col-md-6 mb-5">
+            <div class="post-entry-1 h-100">
+              
+              <div class="post-entry-1-contents">
+                <span class="meta">{{ post.date.date }}</span>
+                <h2><a href="{{ post.id }}">{{ post.title }}</a></h2>
+                <p class="my-3"><a href="{{ post.id }}" class="more-39291">Узнать больше</a></p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+          <div class="col-12">
+            <span class="p-3">1</span>
+            <a href="#" class="p-3">2</a>
+            <a href="#" class="p-3">3</a>
+            <a href="#" class="p-3">4</a>
+          </div>
+
+          
+
+        </div>            
+        <div class="mb-5">
+          <h2 class="footer-heading mb-4">Подписаться на новостную рассылке</h2>
+          <form action="#" method="post" class="footer-suscribe-form">
+            <div class="input-group mb-3">
+              {{form.email }}
+              <div class="input-group-append">
+                {% csrf_token %}
+                <button class="btn btn-primary text-white" type="submit" id="button-addon2">Подписаться</button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+{% endblock %}
+    

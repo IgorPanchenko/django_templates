@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Marga &mdash; Website Template by Colorlib
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h1 class="text-center">{{ post.title }}</h1>
+        <div class="row">
+            <div class="col-6">
+                <img src="{{ post.image.url }}" alt="img" height="500px">
+            </div>
+            <div class="col-6">
+                <p>{{ post.arcticle }}</p>
+            </div>
+        </div>
+        
+        
+        
+        
+    </div>
+    
+{% endblock %}
